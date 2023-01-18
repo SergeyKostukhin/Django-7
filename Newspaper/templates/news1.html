@@ -1,0 +1,14 @@
+
+{% extends 'flatpages/default.html' %}
+
+{% load my_filters %}
+
+
+{% block title %}
+Новости
+{% endblock title %}
+<!-- В контенте на странице мы выводим новость, идентификатор которого был передан в url -->
+{% block content %}
+<h2>{{ news1.header|censor }}</h2> - <h4> {{ news1.date|date:'d.M.Y' }}</h4>
+{{ news1.text|censor }}
+{% endblock content %}
